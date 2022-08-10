@@ -1,3 +1,6 @@
+function selDay(day, year, month) {
+    $("#tododaydetail").text(year + "年 " + (month + 1) + "月 " + day + "日");
+}
 $(document).ready(function () {
 
     var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -66,7 +69,7 @@ $(document).ready(function () {
                 myclass = "ddaycontainer mouseOn"; //当该日期在今天之后时，以深灰字体显示
             }
             var strcld = "";
-            strcld = strcld + "<div class=\"daycontainer\"><div id =\"dayid" + i + "\" class=\"firstFlowFirstColm " + myclass + "\">" + i + "</div ></div >";
+            strcld = strcld + "<div onclick=\"selDay(" + i + ", " + my_year + ", " + my_month + ");\" class=\"daycontainer\"><div id =\"dayid" + i + "\" class=\"firstFlowFirstColm " + myclass + "\">" + i + "</div ></div >";
             str = str + "<div class=\"col-xs-6 col-sm-1 firstFlow\">" + strcld + "</div >";
             if (count % 7 === 0) {
                 str += "</div>";
@@ -105,7 +108,5 @@ $(document).ready(function () {
         $(".datecontainer").remove();
         refreshDate();
     });
-
-
 
 });

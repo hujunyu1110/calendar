@@ -70,18 +70,12 @@ select {
 
 
 .containerRight {
-    margin-left: 7%;
-    width: 90%;
-    height: 100%;
-    display: flex;
-    /*justify-content: center;*/
-    /*align-items: center;*/
+    margin-left: 8%;
     border-radius: 2px;
     /*cursor: pointer;*/
     /*color: white;*/
     font-size: 15px;
     font-weight: bold;
-    /*background-color: #C1CDCD;*/
 }
 
 .mouseOn {
