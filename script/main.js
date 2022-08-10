@@ -25,10 +25,11 @@ $(document).ready(function () {
     var my_month = my_date.getMonth();
     var my_day = my_date.getDate();
 
-    var totalDay = daysMonth(my_month, my_year); //获取该月总天数
-    var firstDay = dayStart(my_month, my_year); //获取该月第一天是星期几
-
     function refreshDate() {
+
+        var totalDay = daysMonth(my_month, my_year); //获取该月总天数
+        var firstDay = dayStart(my_month, my_year); //获取该月第一天是星期几
+
         $("#Year").text(my_year);
         $("#Month").text(month_name[my_month]);
 
@@ -39,10 +40,10 @@ $(document).ready(function () {
         count = 1;
         for (var i = 1; i < firstDay; i++) {
             if (count === 1 || count % 7 === 1) {
-                str += "<div class=\"row\">";
+                str += "<div class=\"row datecontainer\">";
             }
             var strcld = "";
-            strcld = strcld + "<div class=\"daycontainer\"><div id =\"nulldayid" + i + "\" class=\"firstFlowFirstColm ddaycontainer\">" + "" + "</div ></div >";
+            //strcld = strcld + "<div class=\"daycontainer\"><div id =\"nulldayid" + i + "\" class=\"firstFlowFirstColm ddaycontainer\">" + "" + "</div ></div >";
             str = str + "<div class=\"col-xs-6 col-sm-1 firstFlow\">" + strcld + "</div >";
             if (count % 7 === 0) {
                 str += "</div>";
@@ -53,7 +54,7 @@ $(document).ready(function () {
         }
         for (var i = 1; i <= totalDay; i++) {
             if (count === 1 || count % 7 === 1) {
-                str += "<div class=\"row\">";
+                str += "<div class=\"row datecontainer\">";
             }
             var myclass = "";
             if ((i < my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) || my_year < my_date.getFullYear() || (my_year == my_date.getFullYear() && my_month < my_date.getMonth())) {
@@ -79,8 +80,32 @@ $(document).ready(function () {
             container.append(str);
         }
     }
-
-
     refreshDate();
+    $("#preMonth").click(function () {
+        $(".datecontainer").remove();
+        my_month--;
+        if (my_month < 0) {
+            my_year--;
+            my_month = 11;
+        }
+        refreshDate();
+    });
+    $("#afterMonth").click(function () {
+        $(".datecontainer").remove();
+        my_month++;
+        if (my_month > 11) {
+            my_year++;
+            my_month = 0;
+        }
+        refreshDate();
+    });
+    $("#homeBtn").click(function () {
+        my_month = my_date.getMonth();
+        my_day = my_date.getDate();
+        $(".datecontainer").remove();
+        refreshDate();
+    });
+
+
 
 });

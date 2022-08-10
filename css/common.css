@@ -6,8 +6,14 @@ body {
     border: 0px;
 }
 
+.containerMain {
+    padding: 0px;
+    margin: 0px;
+    /*margin-left: 5%;*/
+}
+
 .container {
-    padding-left: 7%;
+    padding-left: 4%;
     padding-top: 1%;
     margin: 0px;
     /*margin-left: 5%;*/
