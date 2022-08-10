@@ -107,6 +107,8 @@ $(document).ready(function () {
         my_day = my_date.getDate();
         $(".datecontainer").remove();
         refreshDate();
+        $("#tododaydetail").text(my_date.getFullYear() + "年 " + (my_date.getMonth() + 1) + "月 " + my_date.getDate() + "日");
     });
+    $("#tododaydetail").text(my_date.getFullYear() + "年 " + (my_date.getMonth() + 1) + "月 " + my_date.getDate() + "日");
 
 });
