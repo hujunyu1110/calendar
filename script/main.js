@@ -38,7 +38,7 @@ $(document).ready(function () {
 
         count = 1;
         for (var i = 1; i < firstDay; i++) {
-            if (count === 1 || count % 7 === 0) {
+            if (count === 1 || count % 7 === 1) {
                 str += "<div class=\"row\">";
             }
             var strcld = "";
@@ -46,11 +46,13 @@ $(document).ready(function () {
             str = str + "<div class=\"col-xs-6 col-sm-1 firstFlow\">" + strcld + "</div >";
             if (count % 7 === 0) {
                 str += "</div>";
+                container.append(str);
+                str = "";
             }
             count++;
         }
         for (var i = 1; i <= totalDay; i++) {
-            if (count === 1 || count % 7 === 0) {
+            if (count === 1 || count % 7 === 1) {
                 str += "<div class=\"row\">";
             }
             var myclass = "";
@@ -67,14 +69,15 @@ $(document).ready(function () {
             str = str + "<div class=\"col-xs-6 col-sm-1 firstFlow\">" + strcld + "</div >";
             if (count % 7 === 0) {
                 str += "</div>";
+                container.append(str);
+                str = "";
             }
             count++;
         }
         if (count % 7 != 0) {
             str += "</div>";
+            container.append(str);
         }
-
-        container.append(str);
     }
 
 
