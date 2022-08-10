@@ -8,7 +8,8 @@
         <script src="./script/jquery.min.js"></script>
         <script src="./script/echarts.min.js"></script>
         <script src="./script/bootstrap.min.js"></script>
-        <script src="./script/main.js"></script>
+        <script src="./script/calendar.js"></script>
+        <script src="./script/todolist.js"></script>
     </head>
 
     <body height:100% width:100%>
@@ -34,8 +35,8 @@
                                     2px;padding-right:
                                     4px;padding-top: 2px;padding-bottom: 2px;">
                                     <div id="preMonth"
-                                        class="firstFlowFirstColm"
-                                        style="color: white; cursor: pointer;">˂
+                                        class="firstFlowFirstColm mouseOn"
+                                        style="color: white;">˂
                                     </div>
                                 </div>
                             </div>
@@ -66,8 +67,8 @@
                                     2px;padding-right:
                                     4px;padding-top: 2px;padding-bottom: 2px;">
                                     <div id="afterMonth"
-                                        class="firstFlowFirstColm"
-                                        style="color: white; cursor: pointer;">˃
+                                        class="firstFlowFirstColm mouseOn"
+                                        style="color: white;">˃
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +149,18 @@
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-6 firstFlow">
-                    <div class="containerRight"></div>
+                    <div class="containerRight" style="height: 100%;width:
+                        80%;">
+                        <div class="col-xs-6 col-sm-12 firstFlow">
+                            <div style="height: 4%;padding-left:
+                                2px;padding-right:
+                                4px;padding-top: 2px;padding-bottom: 2px;">
+                                <div id="homeBtn" class="firstFlowFirstColm"
+                                    style="color: white;">
+                                    待办事项</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>

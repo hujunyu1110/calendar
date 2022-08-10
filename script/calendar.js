@@ -58,12 +58,12 @@ $(document).ready(function () {
             }
             var myclass = "";
             if ((i < my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) || my_year < my_date.getFullYear() || (my_year == my_date.getFullYear() && my_month < my_date.getMonth())) {
-                myclass = "ddaycontainer"; //当该日期在今天之前时，以浅灰色字体显示
+                myclass = "ddaycontainer mouseOn"; //当该日期在今天之前时，以浅灰色字体显示
             } else if (i == my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) {
                 //myclass = " class='green greenbox'"; //当天日期以绿色背景突出显示
-                myclass = "todaystyle";
+                myclass = "todaystyle mouseOn";
             } else {
-                myclass = "ddaycontainer"; //当该日期在今天之后时，以深灰字体显示
+                myclass = "ddaycontainer mouseOn"; //当该日期在今天之后时，以深灰字体显示
             }
             var strcld = "";
             strcld = strcld + "<div class=\"daycontainer\"><div id =\"dayid" + i + "\" class=\"firstFlowFirstColm " + myclass + "\">" + i + "</div ></div >";
